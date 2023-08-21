@@ -12,16 +12,20 @@ import {
 
 const Home = () => {
   const snap = useSnapshot(state);
-
+  const handleLink = () => {
+    window.location.href = 'https://github.com/Amaburi/clothing';
+  };
   return (
     <AnimatePresence>
       {snap.intro && (
         <motion.section className="home" {...slideAnimation('left')}>
           <motion.header {...slideAnimation("down")}>
             <img 
-              src='./threejs.png'
+              src='./githubnobg.png'
               alt="logo"
               className="w-8 h-8 object-contain"
+              onClick={handleLink}
+              style={{ cursor: 'pointer' }}
             />
           </motion.header>
 
